@@ -1,7 +1,12 @@
 import { dataLayerPageView } from "@/dataLayer/dataLayaerManager";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Future Store",
+  description: "The new store for every generation",
+};
 export default function Home() {
   // dataLayerPageView("Accueil", "/");
   return (

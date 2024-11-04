@@ -1,7 +1,18 @@
 import { getAllProducts } from "@/actions/products";
 import ProductsComponent from "@/components/ProductsComponent";
+import { Metadata } from "next";
 import React from "react";
 
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Future Store";
+  const description = "The new store for every generation";
+
+  const metadata: Metadata = {
+    title,
+    description,
+  };
+  return metadata;
+}
 const ProductsPage = async () => {
   const products = await getAllProducts();
   console.log("all prpoducts==>", products);
