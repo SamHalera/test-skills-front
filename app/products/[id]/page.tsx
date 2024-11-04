@@ -12,9 +12,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = params;
   const product = await getSingleProduct(id);
-  const { name, description, image, price } = product.attributes;
-  const metaTitle = name + " | FUTURE STORE";
-  const metaDescription = description + " | FUTURE STORE";
+  const { seo, image } = product.attributes;
+  const metaTitle = seo.metaTitle + " | FUTURE STORE";
+  const metaDescription = seo.metaDescription + " | FUTURE STORE";
 
   const metadata: Metadata = {
     title: metaTitle,
