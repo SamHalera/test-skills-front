@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 const SingleProductComponent = ({ product }: { product: ProductType }) => {
-  console.log("One in component==>", product);
   const { name, description, image, price } = product.attributes;
   return (
     <div className="h-screen flex flex-col items-center gap-4 p-10 ">

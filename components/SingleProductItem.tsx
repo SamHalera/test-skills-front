@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 const SingleProductItem = ({ product }: { product: ProductType }) => {
-  console.log("product in component==>", product);
   const { name, description, image } = product.attributes;
   return (
     <Link

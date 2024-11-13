@@ -3,7 +3,6 @@ import React from "react";
 import SingleProductItem from "./SingleProductItem";
 
 const ProductsComponent = ({ products }: { products: ProductType[] }) => {
-  console.log("products in component==>", products);
   return (
     <div className="flex justify-center gap-4">
       {products.length > 0 ? (
