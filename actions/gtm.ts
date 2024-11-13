@@ -1,3 +1,4 @@
+"use server";
 import { getStrapiBaseURL } from "@/lib/utils";
 import qs from "qs";
 
@@ -12,7 +13,7 @@ export async function getGTMIDFromStrapi() {
     // urlForFetch.search = query;
     const response = await fetch(urlForFetch);
     const { data } = await response.json();
-    console.log(data.attributes.GTM_ID);
+
     return data.attributes.GTM_ID;
   } catch (error) {
     console.error("error getting gtm==>", error);

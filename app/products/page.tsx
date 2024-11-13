@@ -1,5 +1,6 @@
 import { getAllProducts } from "@/actions/products";
 import ProductsComponent from "@/components/ProductsComponent";
+import ProductsPageContent from "@/components/ProductsPageContent";
 import { Metadata } from "next";
 import React from "react";
 
@@ -15,12 +16,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 const ProductsPage = async () => {
   const products = await getAllProducts();
-  console.log("all prpoducts==>", products);
+
   return (
     <div className="flex flex-col items-center gap-4 p-10">
       <h1 className="text-3xl text-indigo-600 font-semibold">OUR PRODUCTS</h1>
 
-      <ProductsComponent products={products} />
+      <ProductsPageContent>
+        <ProductsComponent products={products} />
+      </ProductsPageContent>
     </div>
   );
 };

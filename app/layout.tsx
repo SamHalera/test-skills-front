@@ -27,7 +27,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const gtmId = await getGTMIDFromStrapi();
-  console.log("gtmId==>", gtmId);
 
   return (
     <html lang="en">
@@ -41,7 +40,6 @@ export default async function RootLayout({
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer', '${gtmId}');`}</Script>
-        {/* CMP is inside layout component*/}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

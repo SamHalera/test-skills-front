@@ -1,4 +1,5 @@
 import { getSingleProduct } from "@/actions/products";
+import ProductDetailsPageContent from "@/components/ProductDetailsPageContent";
 import SingleProductComponent from "@/components/SingleProductComponent";
 
 import { Metadata } from "next";
@@ -38,10 +39,16 @@ export async function generateMetadata({
 const pageSingleProduct = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const product = await getSingleProduct(id);
-  console.log(product);
+
   return (
     <div className="flex items-center justify-center">
-      <SingleProductComponent product={product} />
+      <ProductDetailsPageContent
+        id={id}
+        productName={product.attributes.name}
+        productPrice={product.attributes.price}
+      >
+        <SingleProductComponent product={product} />
+      </ProductDetailsPageContent>
     </div>
   );
 };

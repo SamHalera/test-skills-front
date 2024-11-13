@@ -1,3 +1,4 @@
+"use server";
 import { getStrapiBaseURL } from "@/lib/utils";
 import qs from "qs";
 export const getAllProducts = async () => {
@@ -11,7 +12,7 @@ export const getAllProducts = async () => {
     urlForFetch.search = query;
     const response = await fetch(urlForFetch);
     const { data } = await response.json();
-    console.log("data==>", data);
+
     return data;
   } catch (error) {
     console.error("error getting products==>", error);
