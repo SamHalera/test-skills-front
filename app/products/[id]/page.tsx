@@ -3,7 +3,7 @@ import ProductDetailsPageContent from "@/components/ProductDetailsPageContent";
 import SingleProductComponent from "@/components/SingleProductComponent";
 
 import { Metadata } from "next";
-import { title } from "process";
+
 import React from "react";
 
 export async function generateMetadata({
